@@ -7,6 +7,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Avenir LT Std";
@@ -270,6 +273,7 @@ OUR SERVCES
 .services-box__heading {
   position: relative;
   font-size: 15px;
+  min-height: 42px;
 }
 
 .services-box__heading h3 {
@@ -277,13 +281,11 @@ OUR SERVCES
   text-transform: uppercase;
 }
 
-.services-box__heading span {
+.services-box > span {
   display: block;
   width: 48px;
   height: 3px;
   background-color: black;
-  position: absolute;
-  top: 56px;
 }
 
 .services-description {
@@ -417,9 +419,24 @@ input {
   border-radius: 8px;
 }
 
+/* footer */
+footer {
+  padding-top: 36px;
+  padding-bottom: 22px;
+  background-color: #1a1a1a;
+}
+
+.footer__text {
+  color: white;
+  text-align: center;
+}
+
 /* RESPONSIVE */
 
 @media screen and (max-width: 993px) {
+  .header {
+    padding: 19px 0 12px 0;
+  }
   .hero {
     height: calc(50vh - 110px);
   }
@@ -446,6 +463,10 @@ input {
     width: 100%;
     align-items: center;
     justify-content: center;
+  }
+
+  .primary-nav a {
+    font-size: 32px;
   }
 
   .nav-btn {
