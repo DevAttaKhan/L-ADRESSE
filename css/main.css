@@ -145,7 +145,7 @@ HERO SECTION
 
   background-image: url("../images/hero-img.png");
   /* min-height: 868px; */
-  /* height: calc(100vh - 110px); */
+  height: calc(100vh - 110px);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
