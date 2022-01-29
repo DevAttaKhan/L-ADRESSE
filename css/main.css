@@ -269,6 +269,7 @@ OUR SERVCES
 }
 .services-box__heading {
   position: relative;
+  font-size: 15px;
 }
 
 .services-box__heading h3 {
@@ -534,6 +535,10 @@ input {
 
   .logo img {
     max-width: 72%;
+  }
+  .services-box__heading {
+    position: relative;
+    font-size: 15px;
   }
 }
 
