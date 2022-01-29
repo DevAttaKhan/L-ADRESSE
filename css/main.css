@@ -145,7 +145,7 @@ HERO SECTION
 
   background-image: url("../images/hero-img.png");
   /* min-height: 868px; */
-  height: calc(100vh - 110px);
+  /* height: calc(100vh - 110px); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -433,6 +433,12 @@ footer {
 
 /* RESPONSIVE */
 
+@media screen and (max-width: 1025px) {
+  .hero {
+    min-height: 668px;
+  }
+}
+
 @media screen and (max-width: 993px) {
   .header {
     padding: 19px 0 12px 0;
@@ -520,6 +526,10 @@ footer {
 }
 
 @media screen and (max-width: 769px) {
+  .hero {
+    min-height: 441px;
+    background-position: 83%;
+  }
   .heading-primary {
     font-size: 54px;
   }
