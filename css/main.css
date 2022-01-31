@@ -626,7 +626,7 @@ footer {
 @media screen and (max-width: 769px) {
   .hero {
     min-height: 441px;
-    background-position: 90% 86px;
+    background-position: 90% 84px;
   }
   .heading-primary {
     font-size: 54px;
@@ -660,6 +660,9 @@ footer {
 }
 
 @media screen and (max-width: 481px) {
+  .hero {
+    background-position: 90% 69px;
+  }
   .hero__heading p {
     font-size: 11px;
   }
