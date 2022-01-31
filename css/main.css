@@ -42,7 +42,7 @@ UTILITIES
 ******************************************** */
 .flex {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -52,7 +52,7 @@ HEADER CSS GOES HERE
 
 .header {
   background-color: #fff;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   padding: 27px 0 32px 0;
@@ -87,6 +87,7 @@ HEADER CSS GOES HERE
   height: 40px;
   border: none;
   display: none;
+  cursor: pointer;
 }
 .nav-btn__icon {
   position: relative;
@@ -175,7 +176,8 @@ ABOUT SECTION CSS
   color: #4a4a4a;
 }
 
-.heading__span {
+.heading-secondary::before {
+  content: "";
   display: block;
   width: 50px;
   height: 3px;
@@ -212,14 +214,19 @@ ABOUT SECTION CSS
 
 .about-img__wrapper {
   display: flex;
-  padding: 60px 0;
+  margin: 60px 0;
+  gap: 22px;
 }
+
 .about-img-1 img {
   max-width: 100%;
 }
 
 .img-smalls {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .img-smalls img {
@@ -228,7 +235,13 @@ ABOUT SECTION CSS
 
 .about-goals__wrpper {
   display: flex;
-  gap: 96px;
+  /* gap: 96px; */
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+
+.about-goal__box {
+  max-width: 365px;
 }
 
 .heading-tertiary {
@@ -297,7 +310,7 @@ SECTION PORTFOLIO
 ******************************************** */
 
 .portfolio {
-  padding: 76px 0;
+  padding: 76px 0 0;
   color: #4a4a4a;
 }
 
@@ -320,8 +333,53 @@ SECTION PORTFOLIO
   width: 25%;
 }
 
-.trusted-companies img {
+.trusted-companies {
   max-width: 100%;
+}
+
+.slider_btn {
+  position: absolute;
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  color: #333;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  font-size: 55px;
+  cursor: pointer;
+  top: 50%;
+  display: none;
+
+  /* transform: translateY(-50%); */
+}
+
+.slider {
+  height: 180px;
+  max-width: 1282px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 25%;
+  transition: transform 1s;
+}
+
+.slide img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-left {
+  left: 0;
+}
+
+.btn-right {
+  right: 0%;
 }
 
 /*******************************************
@@ -334,13 +392,18 @@ SECTION   INQUIRIES
   padding: 96px 0;
 }
 
+.iquiry_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 .inquiries .section-heading {
   flex: 1;
   align-self: flex-start;
 }
 .section__form {
-  max-width: 646px;
-  flex: 1;
+  flex-basis: 646px;
+  /* margin: 0 auto; */
 }
 
 form {
@@ -348,6 +411,7 @@ form {
   flex-wrap: wrap;
   flex-direction: column;
   max-width: 646px;
+  margin: 0 auto;
   gap: 40px;
 }
 label {
@@ -369,7 +433,7 @@ input {
 .input-wrap {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 40px;
 }
 .input-wrap input {
   width: 50%;
@@ -413,10 +477,19 @@ input {
 
 .btn {
   background-color: white;
+  font-weight: bold;
   padding: 18px 60px;
   color: black;
   align-self: flex-start;
   border-radius: 8px;
+  transition: background, color 0.5s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: white;
+  box-shadow: 0 0 0 3px white;
 }
 
 /* footer */
@@ -455,9 +528,12 @@ footer {
     height: 100vh;
     z-index: 11;
     background-color: white;
-    transform: rotate(-180deg);
+    transform: translateX(100%);
     transition: all 0.5s;
-    transform-origin: top;
+  }
+
+  .about-goal__box {
+    padding: 0 15px;
   }
 
   .primary-nav {
@@ -483,7 +559,7 @@ footer {
   }
 
   .shownav .navbar {
-    transform: rotate(0);
+    transform: translateX(0);
   }
   .heading-primary {
     font-size: 90px;
@@ -498,6 +574,9 @@ footer {
     text-align: center;
     margin-bottom: 18px;
   }
+  .heading-secondary::before {
+    margin-left: 27px;
+  }
   .section__description {
     text-align: center;
     padding: 0;
@@ -511,9 +590,21 @@ footer {
     width: 50%;
   }
 
+  .slide {
+    width: 33.33%;
+  }
+
+  .slider_btn {
+    display: block;
+  }
+
   .inquiries .section-heading {
     align-self: center;
     margin-bottom: 110px;
+  }
+
+  .iquiry_wrapper {
+    flex-direction: column;
   }
 
   .input-wrap {
@@ -544,10 +635,20 @@ footer {
   .about-goals__wrpper {
     flex-direction: column;
     text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 
-  .portfolio__gallery img {
-    width: 100%;
+  .about-goal__box {
+    margin-bottom: 48px;
+  }
+
+  .heading-tertiary {
+    margin-bottom: 18px;
+  }
+
+  .slide {
+    width: 50%;
   }
 }
 
@@ -571,7 +672,16 @@ footer {
     position: relative;
     font-size: 15px;
   }
+  .portfolio__gallery img {
+    width: 100%;
+  }
+
+  .slide {
+    width: 100%;
+  }
 }
+
+/* NAVIGATION BTN TOGGLE */
 
 .shownav .nav-btn__icon {
   background-color: transparent;
