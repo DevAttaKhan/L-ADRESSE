@@ -20,9 +20,15 @@ const goToSlide = function (slide) {
     s.style.transform = `translateX(${100 * (i - slide)}%)`;
   });
 };
-
+let x = window.matchMedia("(max-width: 767px)");
 const nextSlide = function () {
+  // if () {
+  //   curSlide = 0;
+  // }
+  console.log(curSlide, "abc");
   if (curSlide === maxSlide - 1) {
+    curSlide = 0;
+  } else if (x.matches && curSlide === 2) {
     curSlide = 0;
   } else curSlide++;
 

@@ -56,6 +56,10 @@ HEADER CSS GOES HERE
   justify-content: center;
   align-items: center;
   padding: 27px 0 32px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0 20px 20px rgb(0, 0, 0, 0.3);
 }
 
 .container-header {
@@ -147,12 +151,14 @@ HERO SECTION
   background-image: url("../images/hero-img.png");
   /* min-height: 868px; */
   height: calc(100vh - 110px);
-  background-position: center;
+  background-position: center 99px;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   display: flex;
   align-items: center;
+  /* margin-top: 110px;
+  overflow: hidden; */
 }
 
 .hero .container {
@@ -518,6 +524,7 @@ footer {
   }
   .hero {
     height: calc(50vh - 110px);
+    background-position: center;
   }
 
   .navbar {
@@ -619,7 +626,7 @@ footer {
 @media screen and (max-width: 769px) {
   .hero {
     min-height: 441px;
-    background-position: 83%;
+    background-position: 90% 86px;
   }
   .heading-primary {
     font-size: 54px;
