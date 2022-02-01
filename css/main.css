@@ -95,6 +95,10 @@ header .navbar .primary-nav {
   align-items: center;
 }
 
+.primary-nav li a {
+  text-transform: uppercase;
+}
+
 header .nav-btn {
   background: none;
   width: 40px;
