@@ -50,8 +50,10 @@ navBtn.addEventListener("click", function (e) {
 
 $(document).ready(function () {
   $(".slider").slick({
-    dots: true,
+    dots: false,
     infinite: true,
+    // centerMode: true,
+
     slidesToShow: 4,
     slidesToScroll: 4,
     responsive: [
