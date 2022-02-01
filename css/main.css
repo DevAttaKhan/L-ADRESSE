@@ -383,10 +383,10 @@ SECTION PORTFOLIO
 } */
 
 .portfolio .slide {
-  position: absolute;
-  width: 25%;
-  transition: transform 1s;
-  padding: 0 23px;
+
+  max-width: 330px;
+  /* transition: transform 1s;
+  padding: 0 23px; */
 }
 
 .portfolio .slide img {
@@ -696,7 +696,9 @@ footer {
   .portfolio__gallery img {
     width: 100%;
   }
-
+.portfolio .slide img {
+  max-width: 100%;
+}
  
 }
 
